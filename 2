@@ -1,0 +1,77 @@
+Explain the difference between a class and an object in Python. 
+
+Definition 
+        A class is a blueprint for creating objects, while an object is an instance of a class.
+Creation 
+        Classes are defined using the class keyword, whereas objects are created by calling the class constructor.
+Structure
+        A class contains attributes (variables) and methods (functions), while an object holds specific values for those attributes and can execute the methods.
+Reusability
+        A class can be reused to create multiple objects, whereas each object represents a unique entity with its own state.
+Memory Allocation
+        A class itself does not consume memory for its attributes until an object is instantiated; each object has its own memory space for storing its attributes.
+
+
+Provide an example.
+
+# Defining a class
+class Dog:
+    def _init_(self, name, age):
+        self.name = name  # Attribute for the dog's name
+        self.age = age    # Attribute for the dog's age
+
+    def bark(self):       # Method for the dog to bark
+        return f"{self.name} says Woof!"
+
+# Creating an object (instance) of the Dog class
+my_dog = Dog("Buddy", 3)
+
+# Accessing attributes and methods of the object
+print(my_dog.name)    # Output: Buddy
+print(my_dog.age)     # Output: 3
+print(my_dog.bark())  # Output: Buddy says Woof!
+
+In this example, Dog is the class, and my_dog is an object of that class. The class defines attributes and methods, while the object holds specific values and can use those methods.
+
+
+Constructor Method (__init__) vs __str__() Function:
+Explain the difference between them in Python.
+
+1. Purpose
+      __init__(): This method is the constructor of the class, automatically called when a new instance (object) of the class is created. It is used to initialize the attributes of the object.
+      __str__(): This method is used to provide a human-readable string representation of an object. It is called when you use print() or str() on an instance of the class.
+2. Execution Time
+      __init__(): Executed when a class object is instantiated (when you create a new object).
+      __str__(): Executed when you explicitly request a string representation of the object (such as by using print() or str()).
+3. Return Value
+      __init__(): This method doesn't return any value (it must not return anything other than None). It only sets up the initial state of the object.
+      __str__(): This method must return a string that represents the object in a readable format.
+4. Primary Functionality
+      __init__(): It is primarily responsible for initializing the instance variables of an object when it is created.
+      __str__(): It is meant for generating a readable string that represents the object for display purposes.
+5. Usage in Object Creation vs Representation
+      __init__(): Essential for defining how the object is created and what data it contains.
+      __str__(): Optional, but useful for making debugging and displaying information more intuitive, as it improves the readability of the object when printed.
+
+
+Provide an example
+
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+    
+    def __str__(self):
+        return f'{self.year} {self.make} {self.model}'
+
+# Instantiating the object
+my_car = Car('Toyota', 'Camry', 2020)
+
+# __init__ is called here during object creation
+print(my_car)  # __str__ is called here when printing the object
+
+In this example:
+
+__init__() initializes the make, model, and year attributes.
+__str__() provides a human-readable string when printing the object.
